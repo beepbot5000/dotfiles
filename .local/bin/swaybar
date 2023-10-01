@@ -5,7 +5,7 @@ battery=$(sh ~/.local/bin/battery)
 charge_state=$(cat /sys/class/power_supply/BAT0/status)
 volume=$(sh ~/.local/bin/volume)
 
-if [ $battery -gt 21 ]; then battery_emoji="🔋"
+if [ $battery -gt 19 ]; then battery_emoji="🔋"
 else battery_emoji="🪫"; fi
 
 if [ $volume -gt 49 ]; then volume_emoji="🔊"

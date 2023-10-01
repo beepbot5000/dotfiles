@@ -221,8 +221,8 @@ bar {
 bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume 0 +5%; dunstify -r 1987 -h int:value:$(sh .local/bin/volume) "Volume: $(sh ~/.local/bin/volume)%"'
 bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume 0 -5%; dunstify -r 1987 -h int:value:$(sh .local/bin/volume) "Volume: $(sh ~/.local/bin/volume)%"'
 
-bindsym F5 exec "grim /home/alyssa/Pictures/screenshots// ; notify-send 'screenshot taken'"
-bindsym $mod+F5 exec "slurp | grim /home/alyssa/Pictures/screenshots/ ; notify-send 'screenshot taken'"
+bindsym F5 exec "grim /home/alyssa/Pictures/screenshots/$(date +'%Y-%m-%d-%I_%M_%S_%p-screenshot.png') ; notify-send 'screenshot taken'"
+bindsym $mod+F5 exec "slurp | grim /home/alyssa/Pictures/screenshots/$(date +'%Y-%m-%d-%I_%M_%S_%p-screenshot.png') ; notify-send 'screenshot taken'"
 
 
 
