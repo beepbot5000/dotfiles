@@ -1,0 +1,5 @@
+#!/bin/sh
+
+volume=$(pactl list sinks | grep "front-left:" | grep -o ..% | head -n 1 | cut -d " " -f 2 | cut -d "%" -f 1)
+if [ $volume == 00 ]; then volume=100; fi
+echo $volume

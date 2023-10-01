@@ -1,0 +1,15 @@
+#!/bin/sh
+
+date_formatted=$(date +'%Y-%m-%d %I:%M:%S %p')
+battery=$(sh ~/.local/bin/battery)
+charge_state=$(cat /sys/class/power_supply/BAT0/status)
+volume=$(sh ~/.local/bin/volume)
+
+if [ $battery -gt 21 ]; then battery_emoji="🔋"
+else battery_emoji="🪫"; fi
+
+if [ $volume -gt 49 ]; then volume_emoji="🔊"
+elif [ $volume -lt 50 ] && [ $volume -gt 0 ]; then volume_emoji="🔉"
+else volume_emoji="🔈"; fi
+
+echo $volume_emoji $volume% $battery_emoji $battery% \| $charge_state ⏰ $date_formatted
