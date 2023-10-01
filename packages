@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# packages to get base system w/ sway working
+
+# window manager
+sudo pacman -S sway polkit
+# terminal + program launcher
+sudo pacman -S alacritty bemenu
+
+# screenshotting
+sudo pacman -S grim slurp
+# notifications for volume and screenshots
+sudo pacman -S dunst libnotify
+# emojis on swaybar
+sudo pacman -S ttf-joypixels
