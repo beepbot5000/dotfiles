@@ -1,6 +1,12 @@
 #!/bin/sh
 
-# packages to get base system w/ sway working
+# install yay
+cd
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ../
+sudo rm -r yay/
 
 # window manager
 sudo pacman -S sway polkit
@@ -13,3 +19,7 @@ sudo pacman -S grim slurp
 sudo pacman -S dunst libnotify
 # emojis on swaybar
 sudo pacman -S ttf-joypixels
+
+# file manager
+sudo pacman -S lf 
+yay -S ueberzugpp
